@@ -100,7 +100,9 @@ app.get('/os', function (req, res) {
   // initialized.
     var os = require("os");
     var hostname = os.hostname();    
-    res.send(' os:<br>' + JSON.stringify(os));
+    res.send(' os hostname:' + os.hostname() +'<br>');
+    res.send(' os loadavg:' + os.loadavg() +'<br>');    
+    res.send(' os freemem:' + os.freemem() +'<br>');       
 });
 
 initDb(function(err){
